@@ -31,7 +31,7 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	 * 
 	 * 3. Choose 3 different locations on the background image.You can either use the mouse position, 
 	 *    or the color of the image, then decide what action the Media Palace should take in each case. 
-	 *     backgroundImage.getRGB(e.getX(), e.getY()) will give you the color of the current pixel.
+	 *      will give you the color of the current pixel.
 	 */
 
 	BufferedImage backgroundImage;
@@ -49,11 +49,13 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 
 	private void createUI() {
 		JFrame frame = new JFrame("The Magic Box contains many secrets...");
+		frame.addMouseListener(this);
 		frame.add(this);
 		setPreferredSize(new Dimension(backgroundImage.getWidth(), backgroundImage.getHeight()));
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+
 	}
 
 	private void loadBackgroundImage() throws Exception {
@@ -73,6 +75,17 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+		MediaPalace bob= new MediaPalace();
+		if (backgroundImage.getRGB(e.getX(),e.getY())==backgroundImage.getRGB(363,774)) {
+			bob.speak("My names Jef");
+		
+		}
+		
+		if (backgroundImage.getRGB(e.getX(),e.getY())==backgroundImage.getRGB(397,750)) {
+			bob.speak("Boo");
+		
+		}
+	System.out.println(e.getX() + " " + e.getY());
 		
 	}
 

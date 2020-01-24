@@ -21,6 +21,11 @@ import javax.swing.JApplet;
 import javax.swing.JLabel;
 
 public class MediaPalace {
+	public static void main(String[] args) {
+		
+		
+	
+	}
 
 	public JLabel loadImageFromTheInternet(String imageURL) throws MalformedURLException {
 		URL url = new URL(imageURL);
